@@ -135,7 +135,7 @@ void deleteFirst()
     printf("deleted element is %d\n", temp->info);
     free(temp);
 }
-void deletedLast()
+void deleteLast()
 {
     Node *q = head, *temp;
     if (head == NULL)
@@ -203,7 +203,7 @@ void search()
         printf("List is empty nothing to search\n");
         return;
     }
-    printf("Enter a search value");
+    printf("Enter a search value ");
     scanf("%d", &sv);
     while (q != NULL)
     {
@@ -244,7 +244,7 @@ int main()
             deleteFirst();
             break;
         case 6:
-            deletedLast();
+            deleteLast();
             break;
         case 7:
             deleteAny();
