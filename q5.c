@@ -37,10 +37,6 @@ void createList()
         }
         else
         {
-            while (q->next!=NULL)
-            {
-                q = q->next;
-            }
             q->next = temp;
             q = q->next;
         }
