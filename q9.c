@@ -50,20 +50,8 @@ void createStack(){
     scanf("%d",&n);
     for (i = 0; i < n; i++)
     {
-        temp = (Node *)malloc(sizeof(Node));
-        printf("Enter a value ");
-        scanf("%d",&temp->data);
-        temp->next = NULL;
-        if(top==NULL){
-            top = temp;
-            q = top;
-        }
-        else{
-            q->next = temp;
-            q = q->next;
-        }
+        push();
     }
-    
 }
 int main() {
     while (1)
