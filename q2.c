@@ -29,13 +29,14 @@ void insert()
 }
 void del()
 {
+    int element;
     // queue empty condion
     if (front == -1)
     {
         printf("Queue is empty\n");
         return;
     }
-    int element = queue[front];
+    element = queue[front];
     // if queue has only 1 element
     if (front == rear)
     {
@@ -51,12 +52,13 @@ void del()
 }
 void display()
 {
+    int i;
     if (front == -1) // queue empty condition
     {
         printf("Queue is empty\n");
         return;
     }
-    for (int i = front; i <= rear; i++) // displaying all the elements present in a queue
+    for (i = front; i <= rear; i++) // displaying all the elements present in a queue
     {
         printf("%d ", queue[i]);
     }
@@ -64,28 +66,26 @@ void display()
 }
 int main()
 {
+    int choice;
     while (1)
     {
-        int choice;
         printf("1: Insert\n2: Delete\n3: Display\n4: Exit\n");
         scanf("%d", &choice);
         switch (choice)
         {
-        case 1:
-            insert();
-            break;
-        case 2:
-            del();
-            break;
-        case 3:
-            display();
-            break;
-        case 4:
-            exit(0);
-            break;
-        default:
-            printf("Invalid Choice\n");
-            break;
+            case 1:
+                insert();
+                break;
+            case 2:
+                del();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Invalid Choice\n");
         }
     }
     return 0;
