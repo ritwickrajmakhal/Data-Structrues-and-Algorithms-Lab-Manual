@@ -57,7 +57,7 @@ int main() {
     while (1)
     {
         int choice;
-        printf("1: CreateStack\n2: Push\n3: Pop\n4:Display\n");
+        printf("1: CreateStack\n2: Push\n3: Pop\n4:Display\n5:exit\n");
         scanf("%d", &choice);
         switch (choice)
         {
