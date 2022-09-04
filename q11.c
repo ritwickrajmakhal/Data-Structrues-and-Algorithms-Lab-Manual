@@ -1,7 +1,5 @@
 // 11. Write C program to implement Binary search
 #include <stdio.h>
-#include <stdlib.h>
-
 
 int main() {
     int arr[10] = {10,20,30,40,50,60,70,80,90,100};
