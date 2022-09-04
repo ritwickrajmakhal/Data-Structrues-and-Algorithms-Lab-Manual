@@ -70,6 +70,9 @@ void Delete()
 void display()
 {
     Node *q = front;
+    if(q==NULL){
+        printf("Queue is Empty\n");
+    }
     while (q != NULL)
     {
         printf("%d ", q->data);
@@ -82,7 +85,7 @@ int main()
     int choice;
     while (1)
     {
-        printf("1: CreateStack\n2: insert\n3: Delete\n4:Display\n");
+        printf("1: CreateQueue\n2: insert\n3: Delete\n4:Display\n");
         scanf("%d", &choice);
         switch (choice)
         {
