@@ -1,7 +1,7 @@
-// 10. Write C program to implement a Normal queue using linked list with following functions: 
-// a) insert 
-// b) delete 
-// c) display 
+// 10. Write C program to implement a Normal queue using linked list with following functions:
+// a) insert
+// b) delete
+// c) display
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -14,63 +14,74 @@ typedef struct Node Node;
 Node *front = NULL;
 Node *rear = NULL;
 
-void insert(){
+void insert()
+{
     Node *newNode = (Node *)malloc(sizeof(Node));
     printf("Enter a value ");
-    scanf("%d",&newNode->data);
+    scanf("%d", &newNode->data);
     newNode->next = NULL;
-    if(front==NULL){
+    if (front == NULL)
+    {
         front = newNode;
         rear = newNode;
     }
-    else{
+    else
+    {
         rear->next = newNode;
         rear = rear->next;
     }
 }
-void createQueue(){
+void createQueue()
+{
     Node *newNode;
-    int i,n;
+    int i, n;
     printf("How many eleemnts you want to insert? ");
-    scanf("%d",&n);
+    scanf("%d", &n);
     for (i = 0; i < n; i++)
     {
         newNode = (Node *)malloc(sizeof(Node));
         printf("Enter a value ");
-        scanf("%d",&newNode->data);
+        scanf("%d", &newNode->data);
         newNode->next = NULL;
-        if(front==NULL){
+        if (front == NULL)
+        {
             front = newNode;
             rear = newNode;
         }
-        else{
+        else
+        {
             rear->next = newNode;
             rear = rear->next;
         }
     }
 }
-void Delete(){
+void Delete()
+{
     Node *temp = front;
-    if(front==NULL){
+    if (front == NULL)
+    {
         printf("Queue is Empty\n");
         return;
     }
     front = front->next;
-    printf("Deleted element is %d\n",temp->data);
+    printf("Deleted element is %d\n", temp->data);
     free(temp);
 }
-void display(){
+void display()
+{
     Node *q = front;
-    while(q!=NULL){
-        printf("%d ",q->data);
+    while (q != NULL)
+    {
+        printf("%d ", q->data);
         q = q->next;
     }
     printf("\n");
 }
-int main() {
+int main()
+{
+    int choice;
     while (1)
     {
-        int choice;
         printf("1: CreateStack\n2: insert\n3: Delete\n4:Display\n");
         scanf("%d", &choice);
         switch (choice)
@@ -95,7 +106,6 @@ int main() {
             break;
         }
     }
- 
-    return 0;
 
+    return 0;
 }
