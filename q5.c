@@ -82,7 +82,7 @@ void addLast()
 }
 void addAny()
 {
-    Node *prev = head, *temp;
+    Node *q = head, *temp;
     int pos, i;
     printf("Enter a position ");
     scanf("%d", &pos);
@@ -93,18 +93,18 @@ void addAny()
     }
     for (i = 1; i <= pos - 1; i++)
     {
-        if (prev == NULL)
+        if (q == NULL)
         {
             printf("Invalid position\n");
             return;
         }
-        prev = prev->next;
+        q = q->next;
     }
     temp = (Node *)malloc(sizeof(Node));
     printf("Enter a value ");
     scanf("%d", &temp->info);
-    temp->next = prev->next;
-    prev->next = temp;
+    temp->next = q->next;
+    q->next = temp;
 }
 void reverse()
 {
