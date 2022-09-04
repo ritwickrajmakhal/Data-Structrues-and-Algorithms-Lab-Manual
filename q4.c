@@ -7,34 +7,117 @@
 
 struct Node
 {
-    char data;
+    int data;
     int priority;
     struct Node *next;
 };
 typedef struct Node Node;
 Node *front = NULL;
 Node *rear = NULL;
-void insert(){
+void insert()
+{
     Node *q = rear, *newNode = (Node *)malloc(sizeof(Node));
-    printf("Enter a value ");
-    scanf("%c",&newNode->data);
-    printf("Enter priority value of %c ",newNode->data);
-    scanf("%d",&newNode->priority);
+    printf("Enter a value and it's priority ");
+    scanf("%d %d", &newNode->data, &newNode->priority);
     newNode->next = NULL;
-    if(front==NULL){
+    if (front == NULL)
+    {
         front = newNode;
         rear = newNode;
     }
-    else{
-        while(q->priority<newNode->priority){
+    else
+    {
+        while (q->next != NULL && q->next->priority < newNode->priority)
+        {
             q = q->next;
         }
-        newNode->next = q;
-        q->next = newNode;
+        if (q->priority > newNode->priority && q == rear)
+        {
+            newNode->next = q;
+            rear = newNode;
+        }
+        else
+        {
+            newNode->next = q->next;
+            q->next = newNode;
+            front = front->next;
+        }
     }
 }
-int main() {
-    // Incompleted
-    return 0;
+void Delete()
+{
+    Node *q = rear, *temp;
+    if (front == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+    printf("Deleted element is %d\n", front->data);
+    if (front == rear)
+    {
+        front = rear = NULL;
+        return;
+    }
+    while (q->next->next != NULL)
+    {
+        q = q->next;
+    }
+    front = q;
+    temp = q->next;
+    q->next = NULL;
+    free(temp);
+}
 
+void display()
+{
+    Node *q = rear;
+    if (front == NULL)
+    {
+        printf("Queue is Empty");
+    }
+    while (q != NULL)
+    {
+        printf("%d ", q->data);
+        q = q->next;
+    }
+    printf("\n");
+}
+void createQueue()
+{
+    int n, i;
+    printf("Enter how many elements you want to insert? ");
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+        insert();
+    }
+}
+int main()
+{
+    int choice;
+    while (1)
+    {
+        printf("1: CreateQueue\n2: insert\n3: Delete\n4:Display\n");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            createQueue();
+            break;
+        case 2:
+            insert();
+            break;
+        case 3:
+            Delete();
+            break;
+        case 4:
+            display();
+            break;
+        case 5:
+            exit(0);
+        default:
+            printf("Invalid Choice\n");
+        }
+    }
+    return 0;
 }
