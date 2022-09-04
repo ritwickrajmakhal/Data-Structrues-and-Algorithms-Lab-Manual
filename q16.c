@@ -1,6 +1,5 @@
 // 16. Write C program to implement Binary Search Using recursion.. 
 #include <stdio.h>
-#include <stdlib.h>
 
 int bSearch(int arr[],int start, int end, int mid, int sv){
     if(arr[mid]==sv){
