@@ -1,4 +1,4 @@
-16. Write C program to implement Binary Search Using recursion.. 
+// 16. Write C program to implement Binary Search Using recursion.. 
 #include <stdio.h>
 #include <stdlib.h>
 
