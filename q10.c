@@ -39,20 +39,7 @@ void createQueue()
     scanf("%d", &n);
     for (i = 0; i < n; i++)
     {
-        newNode = (Node *)malloc(sizeof(Node));
-        printf("Enter a value ");
-        scanf("%d", &newNode->data);
-        newNode->next = NULL;
-        if (front == NULL)
-        {
-            front = newNode;
-            rear = newNode;
-        }
-        else
-        {
-            rear->next = newNode;
-            rear = rear->next;
-        }
+        insert();
     }
 }
 void Delete()
@@ -60,7 +47,7 @@ void Delete()
     Node *temp = front;
     if (front == NULL)
     {
-        printf("Queue is Empty\n");
+        printf("Queue is Empty");
         return;
     }
     front = front->next;
