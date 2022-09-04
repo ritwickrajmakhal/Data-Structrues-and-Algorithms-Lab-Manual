@@ -1,3 +1,5 @@
+// 12. Write C program to implement linear search using Linked List.
+
 #include <stdio.h>
 #include <stdlib.h>
 struct Node
@@ -13,7 +15,7 @@ void createList()
     int n, i;
     printf("Enter how many elements you want to add? ");
     scanf("%d", &n);
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         temp = (Node *)malloc(sizeof(Node));
         printf("Enter a value ");
