@@ -40,6 +40,9 @@ void insert()
         {
             newNode->next = q->next;
             q->next = newNode;
+        }
+        if (newNode->next == NULL)
+        {
             front = front->next;
         }
     }
@@ -73,7 +76,8 @@ void display()
     Node *q = rear;
     if (front == NULL)
     {
-        printf("Queue is Empty");
+        printf("Queue is Empty\n");
+        return;
     }
     while (q != NULL)
     {
@@ -97,7 +101,7 @@ int main()
     int choice;
     while (1)
     {
-        printf("1: CreateQueue\n2: insert\n3: Delete\n4:Display\n");
+        printf("1: CreateQueue\n2: insert\n3: Delete\n4:Display\n5: Exit\n");
         scanf("%d", &choice);
         switch (choice)
         {
