@@ -18,8 +18,8 @@ void selectionSort(int arr[], int n)
             {
                 smallIdx = j;
             }
-        swap(&arr[smallIdx], &arr[i]);
         }
+        swap(&arr[smallIdx], &arr[i]);
     }
 }
 
