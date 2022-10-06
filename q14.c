@@ -11,19 +11,15 @@ void selectionSort(int arr[], int n)
     int i, j, smallIdx, noOfComp;
     for (i = 0; i < n - 1; i++)
     {
-        noOfComp = 0;
-        smallIdx = arr[i];
+        smallIdx = i;
         for (j = i + 1; j < n; j++)
         {
             if (arr[j] < arr[smallIdx])
             {
                 smallIdx = j;
-                noOfComp++;
             }
+        swap(&arr[smallIdx], &arr[i]);
         }
-        if (noOfComp == 0)
-            return;
-        swap(&arr[i], &arr[smallIdx]);
     }
 }
 
