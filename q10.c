@@ -35,7 +35,7 @@ void createQueue()
 {
     Node *newNode;
     int i, n;
-    printf("How many eleemnts you want to insert? ");
+    printf("How many elements you want to insert? ");
     scanf("%d", &n);
     for (i = 0; i < n; i++)
     {
@@ -47,7 +47,7 @@ void Delete()
     Node *temp = front;
     if (front == NULL)
     {
-        printf("Queue is Empty");
+        printf("Queue is Empty\n");
         return;
     }
     front = front->next;
@@ -72,7 +72,7 @@ int main()
     int choice;
     while (1)
     {
-        printf("1: CreateQueue\n2: insert\n3: Delete\n4:Display\n");
+        printf("1: CreateQueue\n2: insert\n3: Delete\n4:Display\n5:Exit");
         scanf("%d", &choice);
         switch (choice)
         {
